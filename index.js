@@ -4,6 +4,7 @@ const Table = require("cli-table3");
 const gradient = require("gradient-string");
 const chalk = require("chalk");
 const info = require("./info");
+const package = require('./package');
 
 const chars = {
   top: "═",
@@ -30,17 +31,11 @@ let coloredChars = {};
 let currentRandom = undefined;
 
 const randomGradient = string => {
-    // const randoms = [
-    //   chalk.hex("#FFD2E4")(string),
-    //   chalk.hex("#D1FFEA")(string),
-    //   chalk.hex("#EECAFD")(string),
-    //   chalk.hex("#D9DBFE")(string),
-    //   chalk.hex("#BFFCC8")(string)
-    // ];
+  const randoms = info.colors.map(color => {
+    return chalk.hex(color)(string);
+  });
 
-  const randoms = [chalk.red(string), chalk.green(string), chalk.magenta(string)];
-
-  if (!currentRandom) {
+  if (!currentRandom && currentRandom !== 0) {
     currentRandom = Math.floor(Math.random() * randoms.length);
   }
 
@@ -53,13 +48,14 @@ Object.keys(chars).forEach(key => {
 
 const bolder = word => chalk.default.bold(word);
 const link = link => chalk.gray(link);
-const table = new Table({ chars: coloredChars });
-
 const repeat = (rep, times) => {
   return rep.repeat(times);
 };
 
+const table = new Table({ chars: coloredChars });
+
 currentRandom = undefined;
+
 const name = `  ${info.name} `;
 const work = bolder(chalk.white(`${info.occupation} @ ${chalk.hex("#BD002C")(info.work)}`));
 
@@ -69,7 +65,7 @@ const github =
   repeat(" ", 4) +
   link("https://github.com/") +
   chalk.hex("#bcbcbc")(info.github) +
-  repeat(" ", 10);
+  repeat(" ", 11);
 
 const gitlab =
   repeat(" ", 10) +
@@ -77,7 +73,7 @@ const gitlab =
   repeat(" ", 4) +
   link("https://gitlab.com/") +
   chalk.hex("#FF6B34")(info.gitlab) +
-  repeat(" ", 10);
+  repeat(" ", 11);
 
 const linkedIn =
   repeat(" ", 10) +
@@ -85,7 +81,7 @@ const linkedIn =
   repeat(" ", 4) +
   link("https://linkedin.com/in/") +
   chalk.blue(info.linkedIn) +
-  repeat(" ", 8);
+  repeat(" ", 9);
 
 const npm =
   repeat(" ", 10) +
@@ -93,7 +89,7 @@ const npm =
   repeat(" ", 2) +
   link("https://npmjs.com/~") +
   chalk.red(info.npm) +
-  repeat(" ", 10);
+  repeat(" ", 11);
 
 const web =
   repeat(" ", 10) +
@@ -101,9 +97,9 @@ const web =
   repeat(" ", 4) +
   link(info.web) +
   chalk.hex("#C2986E")("whoami") +
-  repeat(" ", 10);
+  repeat(" ", 11);
 
-const card = `${chalk.red("npx")} talhayut`;
+const card = `${chalk.red("npx")} ${package.name}`;
 
 table.push([" "]);
 table.push([{ content: gradient.vice(name), hAlign: "center" }]);
