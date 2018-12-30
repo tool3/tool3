@@ -48,16 +48,12 @@ Object.keys(chars).forEach(key => {
 
 const bolder = word => chalk.default.bold(word);
 const link = link => chalk.gray(link);
-const repeat = (rep, times) => {
-  return rep.repeat(times);
-};
-
-const table = new Table({ chars: coloredChars });
+const repeat = (rep, times) => rep.repeat(times);
 
 currentRandom = undefined;
-
+const table = new Table({ chars: coloredChars });
 const name = `  ${info.name} `;
-const work = bolder(chalk.white(`${info.occupation} @ ${chalk.hex("#BD002C")(info.work)}`));
+const work = bolder(chalk.white(`${info.occupation} @ ${chalk.red(info.work)}`));
 
 const github =
   repeat(" ", 10) +
@@ -85,19 +81,26 @@ const linkedIn =
 
 const npm =
   repeat(" ", 10) +
-  chalk.hex("#D90036")("ᴨᴩᴍ") +
+  chalk.red("ᴨᴩᴍ") +
   repeat(" ", 2) +
   link("https://npmjs.com/~") +
-  chalk.hex("#D90036")(info.npm) +
+  chalk.red(info.npm) +
   repeat(" ", 11);
 
-const web =
-  repeat(" ", 10) +
-  chalk.hex("#C2986E")("") +
-  repeat(" ", 4) +
-  link(info.web) +
-  chalk.hex("#C2986E")("whoami") +
-  repeat(" ", 11);
+const web = ({ web }) => {
+  const url = web.split("/");
+  const path = url[url.length - 1];
+  const domain = url.slice(1, -1);
+
+  return (
+    repeat(" ", 10) +
+    chalk.hex("#C2986E")("") +
+    repeat(" ", 4) +
+    link(`https://${domain[1]}/`) +
+    chalk.hex("#C2986E")(path) +
+    repeat(" ", 11)
+  );
+};
 
 const card = `${chalk.red("npx")} ${package.name}`;
 
@@ -110,7 +113,7 @@ table.push([{ content: npm }]);
 table.push([{ content: github }]);
 table.push([{ content: gitlab }]);
 table.push([{ content: linkedIn }]);
-table.push([{ content: web }]);
+table.push([{ content: web(info) }]);
 table.push([" "]);
 table.push([{ content: card, hAlign: "center" }]);
 table.push([" "]);
