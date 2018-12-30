@@ -4,7 +4,7 @@ const Table = require("cli-table3");
 const gradient = require("gradient-string");
 const chalk = require("chalk");
 const info = require("./info");
-const package = require('./package');
+const package = require("./package");
 
 const chars = {
   top: "═",
@@ -77,18 +77,18 @@ const gitlab =
 
 const linkedIn =
   repeat(" ", 10) +
-  chalk.blue("") +
+  chalk.hex("#0C65B3")("") +
   repeat(" ", 4) +
   link("https://linkedin.com/in/") +
-  chalk.blue(info.linkedIn) +
+  chalk.hex("#0C65B3")(info.linkedIn) +
   repeat(" ", 9);
 
 const npm =
   repeat(" ", 10) +
-  chalk.red("ᴨᴩᴍ") +
+  chalk.hex("#D90036")("ᴨᴩᴍ") +
   repeat(" ", 2) +
   link("https://npmjs.com/~") +
-  chalk.red(info.npm) +
+  chalk.hex("#D90036")(info.npm) +
   repeat(" ", 11);
 
 const web =
@@ -111,7 +111,6 @@ table.push([{ content: github }]);
 table.push([{ content: gitlab }]);
 table.push([{ content: linkedIn }]);
 table.push([{ content: web }]);
-
 table.push([" "]);
 table.push([{ content: card, hAlign: "center" }]);
 table.push([" "]);
