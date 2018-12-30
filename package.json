@@ -1,8 +1,9 @@
 {
   "name": "tool3",
   "version": "1.0.0",
-  "description": "tal hayut npm card",
+  "description": "npm card",
   "main": "index.js",
+  "homepage": "https://github.com/tool3/tool3",
   "bin": {
     "tool3": "./index.js"
   },
