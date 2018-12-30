@@ -1,16 +1,16 @@
 {
-  "name": "talhayut",
+  "name": "tool3",
   "version": "1.0.0",
   "description": "tal hayut npm card",
   "main": "index.js",
   "bin": {
-    "talhayut": "./index.js"
+    "tool3": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "tool3",
+  "license": "MIT",
   "dependencies": {
     "cli-table3": "^0.5.1",
     "gradient-string": "^1.2.0"
