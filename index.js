@@ -3,6 +3,7 @@
 const Table = require("cli-table3");
 const gradient = require("gradient-string");
 const chalk = require('chalk');
+const info = require('./info');
 
 const chars = {
   top: "═",
@@ -33,14 +34,17 @@ Object.keys(chars).forEach(key => {
 
 const bolder = word => chalk.default.bold(word);
 const link = link => chalk.gray(link)
-
 const table = new Table({ chars: coloredChars });
-const name = "  𝚃𝚊𝚕 𝙷𝚊𝚢𝚞𝚝 ";
-const work = bolder(chalk.white(`Fullstack web developer @ ${chalk.hex("#BD002C")("Zerto")}`));
-const github = `          ${chalk.hex("#bcbcbc")("")}    ${link('https://github.com/')}${chalk.hex("#bcbcbc")('tool3')}          `;
-const gitlab = `          ${chalk.hex('#FF6B34')('')}    ${link('https://gitlab.com/')}${chalk.hex('#FF6B34')('thayut')}          `;
-const linkedIn = `          ${chalk.blue('')}    ${link('https://www.linkedin.com/in/')}${chalk.blue('talhayut')}        `;
-const npm = `          ${chalk.red('ᴨᴩᴍ')}  ${link('https://www.npmjs.com/')}${chalk.red('~tool3')}          `;
+
+
+
+
+const name = `  ${info.name} `;
+const work = bolder(chalk.white(`${info.occupation} @ ${chalk.hex("#BD002C")(info.work)}`));
+const github = `          ${chalk.hex("#bcbcbc")("")}    ${link('https://github.com/')}${chalk.hex("#bcbcbc")(info.github)}          `;
+const gitlab = `          ${chalk.hex('#FF6B34')('')}    ${link('https://gitlab.com/')}${chalk.hex('#FF6B34')(info.gitlab)}          `;
+const linkedIn = `          ${chalk.blue('')}    ${link('https://linkedin.com/in/')}${chalk.blue(info.linkedIn)}        `;
+const npm = `          ${chalk.red('ᴨᴩᴍ')}  ${link('https://npmjs.com/~')}${chalk.red(info.npm)}          `;
 const web = `          ${chalk.hex('#C2986E')('')}    ${link('https://thayut.gitlab.io/')}${chalk.hex('#C2986E')('whoami')}          `;
 const card = `${chalk.red('npx')} talhayut`;
 
