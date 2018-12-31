@@ -38,7 +38,7 @@ const randomGradient = string => {
   if (!currentRandom && currentRandom !== 0) {
     currentRandom = Math.floor(Math.random() * randoms.length);
   }
-
+  
   return randoms[currentRandom];
 };
 
@@ -53,7 +53,9 @@ const repeat = (rep, times) => rep.repeat(times);
 currentRandom = undefined;
 const table = new Table({ chars: coloredChars });
 const name = `  ${info.name} `;
-const work = bolder(chalk.white(`${info.occupation} @ ${chalk.red(info.work)}`));
+const work = bolder(
+  chalk.white(`${info.occupation} ${coloredChars.top.replace("═", "@")} ${chalk.red(info.work)}`)
+);
 
 const github =
   repeat(" ", 10) +
