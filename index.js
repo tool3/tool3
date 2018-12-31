@@ -53,8 +53,9 @@ const repeat = (rep, times) => rep.repeat(times);
 currentRandom = undefined;
 const table = new Table({ chars: coloredChars });
 const name = `  ${info.name} `;
+
 const work = bolder(
-  chalk.white(`${info.occupation} ${coloredChars.top.replace("═", "@")} ${chalk.red(info.work)}`)
+  chalk.whiteBright(`${info.occupation} ${coloredChars.top.replace("═", "@")} ${chalk.red(info.work)}`)
 );
 
 const github =
