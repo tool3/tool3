@@ -50,6 +50,9 @@ const bolder = word => chalk.default.bold(word);
 const link = link => chalk.gray(link);
 const repeat = (rep, times) => rep.repeat(times);
 
+console.log(process.env.encoding);
+
+
 currentRandom = undefined;
 const table = new Table({ chars: coloredChars });
 const name = `  ${info.name} `;
@@ -90,6 +93,15 @@ const npm =
   chalk.red(info.npm) +
   repeat(" ", 11);
 
+  const dev =
+  repeat(" ", 10) +
+  chalk.inverse(bolder("DEV")) +
+  repeat(" ", 2) +
+  link("https://dev.to/") +
+  chalk.whiteBright(info.github) +
+  repeat(" ", 11);
+
+
 const web = ({ web }) => {
   const url = web.split("/");
   const path = url[url.length - 1];
@@ -97,10 +109,10 @@ const web = ({ web }) => {
 
   return (
     repeat(" ", 10) +
-    chalk.hex("#C2986E")("") +
+    chalk.hex("#6ce2e2")("") +
     repeat(" ", 4) +
     link(`https://${domain[1]}/`) +
-    chalk.hex("#C2986E")(path) +
+    chalk.hex("#6ce2e2")(path) +
     repeat(" ", 11)
   );
 };
@@ -113,8 +125,9 @@ table.push([" "]);
 table.push([{ content: work, hAlign: "center" }]);
 table.push([" "]);
 table.push([{ content: npm }]);
-table.push([{ content: github }]);
+table.push([{ content: dev }]);
 table.push([{ content: gitlab }]);
+table.push([{ content: github }]);
 table.push([{ content: linkedIn }]);
 table.push([{ content: web(info) }]);
 table.push([" "]);
