@@ -50,9 +50,6 @@ const bolder = word => chalk.default.bold(word);
 const link = link => chalk.gray(link);
 const repeat = (rep, times) => rep.repeat(times);
 
-console.log(process.env.encoding);
-
-
 currentRandom = undefined;
 const table = new Table({ chars: coloredChars });
 const name = `  ${info.name} `;
