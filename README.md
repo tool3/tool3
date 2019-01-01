@@ -1,6 +1,6 @@
 My npm business card
 
-`npx talhayut`
+`npx tool3`
 
 # Customizable 🔧
 Feel free to fork the repo, update the info and packge .json files with your information and publish to npm
