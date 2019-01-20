@@ -52,48 +52,48 @@ const repeat = (rep, times) => rep.repeat(times);
 
 currentRandom = undefined;
 const table = new Table({ chars: coloredChars });
-const name = `  ${info.name} `;
+const name = `🚀  ${info.name} 🚀`;
 
 const work = bolder(
   chalk.whiteBright(`${info.occupation} ${coloredChars.top.replace("═", "@")} ${chalk.red(info.work)}`)
 );
 
 const github =
-  repeat(" ", 10) +
-  chalk.hex("#bcbcbc")("") +
+  repeat(" ", 12) +
+  bolder(chalk.whiteBright("Github")) +
   repeat(" ", 4) +
   link("https://github.com/") +
   chalk.hex("#bcbcbc")(info.github) +
   repeat(" ", 11);
 
 const gitlab =
-  repeat(" ", 10) +
-  chalk.hex("#FF6B34")("") +
+  repeat(" ", 12) +
+  bolder(chalk.whiteBright("Gitlab")) +
   repeat(" ", 4) +
   link("https://gitlab.com/") +
-  chalk.hex("#FF6B34")(info.gitlab) +
+  chalk.hex("#FCA326")(info.gitlab) +
   repeat(" ", 11);
 
 const linkedIn =
   repeat(" ", 10) +
-  chalk.hex("#0C65B3")("") +
+  bolder(chalk.whiteBright("LinkedIn")) +
   repeat(" ", 4) +
   link("https://linkedin.com/in/") +
   chalk.hex("#0C65B3")(info.linkedIn) +
   repeat(" ", 9);
 
 const npm =
-  repeat(" ", 10) +
-  chalk.red("ᴨᴩᴍ") +
-  repeat(" ", 2) +
+  repeat(" ", 15) +
+  bolder(chalk.whiteBright("npm")) +
+  repeat(" ", 4) +
   link("https://npmjs.com/~") +
   chalk.red(info.npm) +
   repeat(" ", 11);
 
   const dev =
-  repeat(" ", 10) +
-  chalk.inverse(bolder("DEV")) +
-  repeat(" ", 2) +
+  repeat(" ", 15) +
+  bolder(chalk.whiteBright("DEV")) +
+  repeat(" ", 4) +
   link("https://dev.to/") +
   chalk.whiteBright(info.github) +
   repeat(" ", 11);
@@ -105,8 +105,8 @@ const web = ({ web }) => {
   const domain = url.slice(1, -1);
 
   return (
-    repeat(" ", 10) +
-    chalk.hex("#6ce2e2")("") +
+    repeat(" ", 15) +
+    bolder(chalk.whiteBright("Web")) +
     repeat(" ", 4) +
     link(`https://${domain[1]}/`) +
     chalk.hex("#6ce2e2")(path) +
@@ -121,10 +121,10 @@ table.push([{ content: gradient.vice(name), hAlign: "center" }]);
 table.push([" "]);
 table.push([{ content: work, hAlign: "center" }]);
 table.push([" "]);
+table.push([{ content: github }]);
+table.push([{ content: gitlab }]);
 table.push([{ content: npm }]);
 table.push([{ content: dev }]);
-table.push([{ content: gitlab }]);
-table.push([{ content: github }]);
 table.push([{ content: linkedIn }]);
 table.push([{ content: web(info) }]);
 table.push([" "]);
