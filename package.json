@@ -8,7 +8,7 @@
     "tool3": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo 'no test'"
   },
   "author": "tool3",
   "license": "MIT",
