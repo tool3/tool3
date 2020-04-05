@@ -5,5 +5,5 @@ that's me
 npx tool3
 ```
 
-![example](./example.png)
+![example](./example.PNG)
 
