@@ -79,7 +79,7 @@ const table = new Table({ chars: coloredChars });
 const name = `${info.name}`;
 
 const work = bolder(
-  chalk.whiteBright(`${info.occupation} ${coloredChars.top.replace("═", "@")} ${chalk.red(info.work)}`)
+  chalk.whiteBright(`${info.occupation} ${coloredChars.top.replace("═", "@")} ${chalk.cyan(info.work)}`)
 );
 
 table.push([{ content: `\n${chalk.bold(name.trim())}\n`, hAlign: "center" }]);
