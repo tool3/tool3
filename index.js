@@ -19,7 +19,6 @@ const chars = {
   mid: " ",
   right: "║",
   "right-mid": "║",
-  // mid: "",
   "left-mid": "║",
   "mid-mid": "║",
   "right-mid": "║"
@@ -40,7 +39,7 @@ const colors = {
   bold: '\x1b[0;1m',
   reset: '\x1b[0m',
   npm: '\x1b[38;5;198;54;53m',
-  linkedIn: '\x1b[38;5;1;119;181m'
+  linkedIn: '\x1b[38;5;75m'
 };
 
 let coloredChars = {};
