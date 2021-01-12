@@ -57,7 +57,7 @@ const randomGradient = string => {
 const createEntry = (name, space) => {
   const item = info.social[name];
   const coloredUser = item.color ? color(item.user, item.color) : item.user
-  return repeat(" ", 12) +
+  return repeat(" ", 8) +
     color(name, 'bold') +
     repeat(" ", space) +
     link(item.url) +
@@ -81,11 +81,11 @@ table.push([{ content: `${color(name.trim(), 'bold')}`, hAlign: "center" }]);
 table.push([{ content: `${work}`, hAlign: "center" }]);
 
 
-Object.keys(info.social).map(name => {
+const content = Object.keys(info.social).map(name => {
   const space = name.length > 6 ? 2 : (name.length <= 3 ? 7 : 4);
-  const entry = createEntry(name, space);
-  table.push([{ content: entry, vAlign: 'center' }]);
+  return createEntry(name, space);  
 });
+table.push([{ content: content.join('\n'), vAlign: 'center' }]);
 
 const npx = `${color("npx", 'red')} ${package.name}`;
 table.push([{ content: `\n${npx}\n`, hAlign: 'center', vAlign: 'center' }]);
