@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const Table = require("cli-table3");
-const chalk = require("chalk");
 const info = require("./info");
 const package = require("./package");
 
