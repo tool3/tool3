@@ -1,9 +1,7 @@
-# tool3
-that's me  
+# Hi I'm Tal Hayut ! 👋🏼
+an open source enthusiast, musician, space geek, and quite possibly crazy.
+- [repos](https://github.com/tool3/repositories)
+- [npm](https://www.npmjs.com/~tool3)
+- [linkedin](https://linkedin.com/in/talhayut)
 
-```bash
-npx tool3
-```
-
-<img src="https://raw.githubusercontent.com/tool3/tool3/master/example.png" />
-
+you can checkout my card with `npx tool3`
