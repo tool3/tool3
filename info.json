@@ -8,28 +8,15 @@
       "user": "tool3",
       "url": "https://github.com/"
     },
-    "gitlab": {
-      "user": "thayut",
-      "url": "https://gitlab.com/",
-      "color": "#FA7036"
-    },
     "npm": {
       "user": "tool3",
       "url": "https://npmjs.org/~",
-      "color": "#C63635"
-    },
-    "DEV": {
-      "user": "tool3",
-      "url": "https://dev.to/",
-      "color": "#FFFFFF"
-    },
-    "web": {
-      "url": "https://thayut.gitlab.io/whoami"
+      "color": "npm"
     },
     "linkedIn": {
       "user": "talhayut",
       "url": "https://linkedin.com/in/",
-      "color": "#0177B5"
+      "color": "linkedIn"
     }
   },
   "colors": [
