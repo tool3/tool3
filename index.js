@@ -48,10 +48,11 @@ let random;
 const color = (text, color) => colors[color] + text + colors.reset;
 const link = link => color(link, 'gray');
 const repeat = (rep, times) => rep.repeat(times);
-const randomColors = Object.keys(colors)
+const randomColors = Object.keys(colors).filter(key => key !== 'reset' && key !== 'gray')
+
 const randomGradient = string => {
   if (!random) random = Math.floor(Math.random() * randomColors.length);
-    return color(string, randomColors[random]);
+  return color(string, randomColors[random]);
 };
 
 const createEntry = (name, space) => {
@@ -85,9 +86,26 @@ const content = Object.keys(info.social).map(name => {
   const space = name.length > 6 ? 2 : (name.length <= 3 ? 7 : 4);
   return createEntry(name, space);  
 });
-table.push([{ content: content.join('\n'), vAlign: 'center' }]);
+table.push([{ content: content.join('\n') + '\n', vAlign: 'center' }]);
 
-const npx = `${color("npx", 'red')} ${package.name}`;
-table.push([{ content: `\n${npx}\n`, hAlign: 'center', vAlign: 'center' }]);
+const args = process.argv[2];
+if (args && args === '-q' || args == '--qr') {
+  const qr = `
+  █▀▀▀▀▀█  ▀▀█▄ █ ▄ █▀▀▀▀▀█
+  █ ███ █ ▄▀██ ▄█▄█ █ ███ █
+  █ ▀▀▀ █ ▀▄█ ▀█▄ █ █ ▀▀▀ █
+  ▀▀▀▀▀▀▀ ▀▄▀ █ █▄▀ ▀▀▀▀▀▀▀
+  ▀█ ▄▄█▀▀▄▀█ ▀▀▀█   ▄██▄▄ 
+  ▀▀ ▄  ▀█▀▀▄█▀ ▀█▄▄▄█▀█ ▀█
+  █▄▀██▀▀▄█▀█ ▄▄ ▄▀▄▀█   ▄▀
+  █ █▀  ▀▀ ▀▀ ▄▀▀█▄▀██▀█▄▀█
+  ▀ ▀ ▀ ▀ █▄  ▀█▀▀█▀▀▀█ ▀  
+  █▀▀▀▀▀█ █  ▄▀ ▄▄█ ▀ █   █
+  █ ███ █  █ ▀███████▀▀ ▀▄▄
+  █ ▀▀▀ █ ▄▄▀▄▄ ▀▄▄  ▄▄▀▀ █
+  ▀▀▀▀▀▀▀ ▀▀▀▀  ▀ ▀▀▀  ▀  ▀
+  `
+  table.push([{ content: qr, hAlign: 'center', hAilgn: 'center' }]);
+}
 
 console.log(table.toString());
