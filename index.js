@@ -29,12 +29,12 @@ const colors = {
   yellow: '\x1b[38;5;215m',
   red: '\x1b[38;5;204m',
   gray: '\x1b[2m',
-  marine: '\x1b[38;5;75m',
+  marine: '\x1b[38;5;39m',
   white: '\x1b[37m',
   cyan: '\x1b[96m',
   pink: '\x1b[38;5;219m',
   magenta: '\x1b[95m',
-  blue: '\x1b[34m',
+  blue: '\x1b[38;2;19;110;248m',
   teal: '\x1b[38;5;86m',
   bold: '\x1b[0;1m',
   reset: '\x1b[0m',
@@ -75,7 +75,7 @@ const table = new Table({ chars: coloredChars });
 const name = `${info.name}`;
 
 const work = color(
-  color(`${info.occupation} ${coloredChars.top.replace("═", "@")} ${color(info.work, 'cyan')}`, 'bold'), 'bold'
+  color(`${info.occupation} ${coloredChars.top.replace("═", "@")} ${color(info.work, 'blue')}`, 'bold'), 'bold'
 );
 
 table.push([{ content: `${color(name.trim(), 'bold')}`, hAlign: "center" }]);

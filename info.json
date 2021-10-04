@@ -6,7 +6,8 @@
   "social": {
     "github": {
       "user": "tool3",
-      "url": "https://github.com/"
+      "url": "https://github.com/",
+      "color": "pink"
     },
     "npm": {
       "user": "tool3",
