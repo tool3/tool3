@@ -1,7 +1,6 @@
 {
   "name": "Tal Hayut",
-  "occupation": "Senior Fullstack Developer",
-  "work": "accessiBe",
+  "occupation": "Senior Fullstack Engineer",
   "npm": "tool3",
   "social": {
     "github": {
@@ -20,15 +19,5 @@
       "color": "linkedIn"
     }
   },
-  "colors": [
-    "#fc9292",
-    "#8d94fc",
-    "#ee9eff",
-    "#D1FFEA",
-    "#e3a1ea",
-    "#7fffd4",
-    "#8CEFFD",
-    "#23819C",
-    "#62D0FF"
-  ]
+  "colors": ["#fc9292", "#8d94fc", "#ee9eff", "#D1FFEA", "#e3a1ea", "#7fffd4", "#8CEFFD", "#23819C", "#62D0FF"]
 }

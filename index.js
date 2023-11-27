@@ -1,27 +1,26 @@
 #!/usr/bin/env node
 
-const Table = require("cli-table3");
-const info = require("./info");
-const package = require("./package");
+const Table = require('cli-table3');
+const info = require('./info');
 
 const chars = {
-  top: "═",
-  "top-mid": "╤",
-  "top-left": "╔",
-  "top-right": "╗",
-  bottom: "═",
-  "bottom-mid": "╧",
-  "bottom-left": "╚",
-  "bottom-right": "╝",
-  left: "║",
-  "left-mid": "║",
-  "mid-mid": "║",
-  mid: " ",
-  right: "║",
-  "right-mid": "║",
-  "left-mid": "║",
-  "mid-mid": "║",
-  "right-mid": "║"
+  top: '═',
+  'top-mid': '╤',
+  'top-left': '╔',
+  'top-right': '╗',
+  bottom: '═',
+  'bottom-mid': '╧',
+  'bottom-left': '╚',
+  'bottom-right': '╝',
+  left: '║',
+  'left-mid': '║',
+  'mid-mid': '║',
+  mid: ' ',
+  right: '║',
+  'right-mid': '║',
+  'left-mid': '║',
+  'mid-mid': '║',
+  'right-mid': '║'
 };
 
 const colors = {
@@ -46,27 +45,22 @@ let coloredChars = {};
 let random;
 
 const color = (text, color) => colors[color] + text + colors.reset;
-const link = link => color(link, 'gray');
+const link = (link) => color(link, 'gray');
 const repeat = (rep, times) => rep.repeat(times);
-const randomColors = Object.keys(colors).filter(key => key !== 'reset' && key !== 'gray')
+const randomColors = Object.keys(colors).filter((key) => key !== 'reset' && key !== 'gray');
 
-const randomGradient = string => {
+const randomGradient = (string) => {
   if (!random) random = Math.floor(Math.random() * randomColors.length);
   return color(string, randomColors[random]);
 };
 
 const createEntry = (name, space) => {
   const item = info.social[name];
-  const coloredUser = item.color ? color(item.user, item.color) : item.user
-  return repeat(" ", 8) +
-    color(name, 'bold') +
-    repeat(" ", space) +
-    link(item.url) +
-    coloredUser +
-    repeat(" ", 11);
-}
+  const coloredUser = item.color ? color(item.user, item.color) : item.user;
+  return repeat(' ', 8) + color(name, 'bold') + repeat(' ', space) + link(item.url) + coloredUser + repeat(' ', 11);
+};
 
-Object.keys(chars).forEach(key => {
+Object.keys(chars).forEach((key) => {
   coloredChars[key] = randomGradient(chars[key]);
 });
 
@@ -75,37 +69,35 @@ const table = new Table({ chars: coloredChars });
 const name = `${info.name}`;
 
 const work = color(
-  color(`${info.occupation} ${coloredChars.top.replace("═", "@")} ${color(info.work, 'blue')}`, 'bold'), 'bold'
+  color(`${info.occupation}`, 'bold'),
+  'bold'
 );
 
-table.push([{ content: `${color(name.trim(), 'bold')}`, hAlign: "center" }]);
-table.push([{ content: `${work}`, hAlign: "center" }]);
+table.push([{ content: "", }]);
+table.push([{ content: `${color(name.trim(), 'bold')}`, hAlign: 'center' }]);
+table.push([{ content: `${work}`, hAlign: 'center' }]);
 
-
-const content = Object.keys(info.social).map(name => {
-  const space = name.length > 6 ? 2 : (name.length <= 3 ? 7 : 4);
-  return createEntry(name, space);  
+const content = Object.keys(info.social).map((name) => {
+  const space = name.length > 6 ? 2 : name.length <= 3 ? 7 : 4;
+  return createEntry(name, space);
 });
-table.push([{ content: content.join('\n') + '\n', vAlign: 'center' }]);
+table.push([{ content: content.join('\n'), vAlign: 'center' }]);
 
-const args = process.argv[2];
-if (args && args === '-q' || args == '--qr') {
-  const qr = `
-  █▀▀▀▀▀█  ▀▀█▄ █ ▄ █▀▀▀▀▀█
-  █ ███ █ ▄▀██ ▄█▄█ █ ███ █
-  █ ▀▀▀ █ ▀▄█ ▀█▄ █ █ ▀▀▀ █
-  ▀▀▀▀▀▀▀ ▀▄▀ █ █▄▀ ▀▀▀▀▀▀▀
-  ▀█ ▄▄█▀▀▄▀█ ▀▀▀█   ▄██▄▄ 
-  ▀▀ ▄  ▀█▀▀▄█▀ ▀█▄▄▄█▀█ ▀█
-  █▄▀██▀▀▄█▀█ ▄▄ ▄▀▄▀█   ▄▀
-  █ █▀  ▀▀ ▀▀ ▄▀▀█▄▀██▀█▄▀█
-  ▀ ▀ ▀ ▀ █▄  ▀█▀▀█▀▀▀█ ▀  
-  █▀▀▀▀▀█ █  ▄▀ ▄▄█ ▀ █   █
-  █ ███ █  █ ▀███████▀▀ ▀▄▄
-  █ ▀▀▀ █ ▄▄▀▄▄ ▀▄▄  ▄▄▀▀ █
-  ▀▀▀▀▀▀▀ ▀▀▀▀  ▀ ▀▀▀  ▀  ▀
-  `
-  table.push([{ content: qr, hAlign: 'center', hAilgn: 'center' }]);
-}
+const qr = `
+█▀▀▀▀▀█  ▀▀█▄ █ ▄ █▀▀▀▀▀█
+█ ███ █ ▄▀██ ▄█▄█ █ ███ █
+█ ▀▀▀ █ ▀▄█ ▀█▄ █ █ ▀▀▀ █
+▀▀▀▀▀▀▀ ▀▄▀ █ █▄▀ ▀▀▀▀▀▀▀
+▀█ ▄▄█▀▀▄▀█ ▀▀▀█   ▄██▄▄ 
+▀▀ ▄  ▀█▀▀▄█▀ ▀█▄▄▄█▀█ ▀█
+█▄▀██▀▀▄█▀█ ▄▄ ▄▀▄▀█   ▄▀
+█ █▀  ▀▀ ▀▀ ▄▀▀█▄▀██▀█▄▀█
+▀ ▀ ▀ ▀ █▄  ▀█▀▀█▀▀▀█ ▀  
+█▀▀▀▀▀█ █  ▄▀ ▄▄█ ▀ █   █
+█ ███ █  █ ▀███████▀▀ ▀▄▄
+█ ▀▀▀ █ ▄▄▀▄▄ ▀▄▄  ▄▄▀▀ █
+▀▀▀▀▀▀▀ ▀▀▀▀  ▀ ▀▀▀  ▀  ▀
+  `;
+table.push([{ content: qr, hAlign: 'center', hAilgn: 'center' }]);
 
 console.log(table.toString());
