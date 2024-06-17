@@ -11,7 +11,7 @@
     "npm": {
       "user": "tool3",
       "url": "https://npmjs.org/~",
-      "color": "npm"
+      "color": "red"
     },
     "linkedIn": {
       "user": "talhayut",

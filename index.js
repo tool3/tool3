@@ -2,6 +2,7 @@
 
 const Table = require('cli-table3');
 const info = require('./info');
+const gradient = require('gradient-string');
 
 const chars = {
   top: '═',
@@ -37,7 +38,6 @@ const colors = {
   teal: '\x1b[38;5;86m',
   bold: '\x1b[0;1m',
   reset: '\x1b[0m',
-  npm: '\x1b[38;5;198;54;53m',
   linkedIn: '\x1b[38;5;75m'
 };
 
@@ -49,7 +49,7 @@ const link = (link) => color(link, 'gray');
 const repeat = (rep, times) => rep.repeat(times);
 const randomColors = Object.keys(colors).filter((key) => key !== 'reset' && key !== 'gray');
 
-const randomGradient = (string) => {
+const randomColor = (string) => {
   if (!random) random = Math.floor(Math.random() * randomColors.length);
   return color(string, randomColors[random]);
 };
@@ -61,7 +61,7 @@ const createEntry = (name, space) => {
 };
 
 Object.keys(chars).forEach((key) => {
-  coloredChars[key] = randomGradient(chars[key]);
+  coloredChars[key] = randomColor(chars[key]);
 });
 
 currentRandom = undefined;
@@ -83,7 +83,10 @@ const content = Object.keys(info.social).map((name) => {
 });
 table.push([{ content: content.join('\n'), vAlign: 'center' }]);
 
-const qr = `
+const randomGradients = Object.keys(gradient);
+const randomGradient = randomGradients[Math.floor(Math.random() * randomGradients.length)]; 
+
+const qr = gradient[randomGradient](`
 █▀▀▀▀▀█  ▀▀█▄ █ ▄ █▀▀▀▀▀█
 █ ███ █ ▄▀██ ▄█▄█ █ ███ █
 █ ▀▀▀ █ ▀▄█ ▀█▄ █ █ ▀▀▀ █
@@ -97,7 +100,7 @@ const qr = `
 █ ███ █  █ ▀███████▀▀ ▀▄▄
 █ ▀▀▀ █ ▄▄▀▄▄ ▀▄▄  ▄▄▀▀ █
 ▀▀▀▀▀▀▀ ▀▀▀▀  ▀ ▀▀▀  ▀  ▀
-  `;
+  `);
 table.push([{ content: qr, hAlign: 'center', hAilgn: 'center' }]);
 
 console.log(table.toString());
