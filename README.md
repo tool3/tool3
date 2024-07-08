@@ -12,3 +12,35 @@ you can checkout my card with `npx tool3`
   <a href="https://www.npmjs.com/~tool3"><img src="./img/npm.svg" width="55" style="margin-left: 20px;"/></a>
 </div>   
 
+```stl
+solid OpenSCAD_Model
+  facet normal 0 -0 -1
+    outer loop
+      vertex 0 5.7735 0
+      vertex 5 -2.88675 0
+      vertex -5 -2.88675 0
+    endloop
+  endfacet
+  facet normal -0.821584 0.474342 0.316228
+    outer loop
+      vertex 0 0 8.66025
+      vertex 0 5.7735 0
+      vertex -5 -2.88675 0
+    endloop
+  endfacet
+  facet normal 0.821584 0.474342 0.316228
+    outer loop
+      vertex 0 5.7735 0
+      vertex 0 0 8.66025
+      vertex 5 -2.88675 0
+    endloop
+  endfacet
+  facet normal 0 -0.948683 0.316228
+    outer loop
+      vertex 5 -2.88675 0
+      vertex 0 0 8.66025
+      vertex -5 -2.88675 0
+    endloop
+  endfacet
+endsolid OpenSCAD_Model
+```
