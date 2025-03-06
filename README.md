@@ -1,7 +1,6 @@
 # Hi I'm Tal Hayut ! 👋🏼
 father, artist, software engineer, sometimes all at once.   
 <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=tool3&theme=monokai" width="500" />
-<img src="https://wakatime.com/share/@01d1d52d-5fe4-4fbe-89ba-2ee401c977aa/85a9a932-e8e5-4431-949a-637f775591bc.svg" width="500"/>   
 ```stl
 solid Mesh
   facet normal 0.000000 -1.000000 0.000000
