@@ -1,6 +1,6 @@
 # Hi I'm Tal Hayut ! 👋🏼
 father, artist, software engineer, sometimes all at once.   
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=tool3&theme=monokai" width="500" />
+<!--
 ```stl
 solid Mesh
   facet normal 0.000000 -1.000000 0.000000
@@ -15111,4 +15111,31 @@ solid Mesh
   endfacet
 endsolid Mesh
 ```
+!-->
+
+# Project Highlights
+
+## [chartscii](https://github.com/tool3/chartscii)
+![Screen Recording 2025-10-13 at 10 42 40 (3)](https://github.com/user-attachments/assets/52521a3c-7399-4d3d-b644-ccf285c0ce19)
+
+
+## [shaders](https://github.com/tool3/shaders)
+<img width="1728" height="961" alt="Screenshot 2025-10-10 at 15 40 56" src="https://github.com/user-attachments/assets/656b0e69-d7a3-4c7b-b7ca-03ef3eb02dcc" />
+
+## [polyclock](https://github.com/tool3/polyclock)
+<img width="1728" height="962" alt="Screenshot 2025-10-13 at 10 51 28" src="https://github.com/user-attachments/assets/0fb7bf00-12ef-4b48-8af8-a08f58681f06" />
+
+## [contributions](https://github.com/tool3/contributions)
+<img width="1728" height="961" alt="Screenshot 2025-10-10 at 15 40 09" src="https://github.com/user-attachments/assets/148e4e21-4316-4fd2-b8d5-a672e39fae1b" />
+
+## [matcaps](https://github.com/tool3/matcaps)
+<img width="1728" height="963" alt="Screenshot 2025-10-10 at 15 40 36" src="https://github.com/user-attachments/assets/3f7148c9-a240-47e8-88a8-5bccb1fc70ed" />
+
+
+
+
+
+
+
+
 
