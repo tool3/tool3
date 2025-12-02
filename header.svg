@@ -2,45 +2,44 @@
 	<foreignObject width="100%" height="100%">
 		<div xmlns="http://www.w3.org/1999/xhtml">
 			<style>
-				@keyframes rotate {
+				@keyframes slideInOut {
 					0% {
 						transform: translateY(200%);
-					}
-
-					100% {
-						transform: translateY(-30%);
-					}
-				}
-
-				@keyframes gradientBackground {
-					0% {
-						background-position: 0% 50%;
-					}
-
-					50% {
-						background-position: 100% 50%;
-					}
-
-					100% {
-						background-position: 0% 50%;
-					}
-				}
-
-				@keyframes fadeIn {
-					0% {
 						opacity: 0;
 					}
 
-					66% {
-						opacity: 0;
-					}
-
-					100% {
+					15% {
 						opacity: 1;
+					}
+
+					35% {
+						transform: translateY(-30%);
+						opacity: 1;
+					}
+
+					65% {
+						transform: translateY(-30%);
+						opacity: 1;
+					}
+
+					80% {
+						opacity: 1;
+					}
+
+					100% {
+						transform: translateY(-300%);
+						opacity: 0;
 					}
 				}
 
 				.container {
+					position: relative;
+					width: 100%;
+					height: 400px;
+					overflow: hidden;
+				}
+
+				.inner-container {
 					font-family:
 						system-ui,
 						-apple-system,
@@ -52,18 +51,14 @@
 						'Apple Color Emoji',
 						'Segoe UI Emoji';
 					display: flex;
-					/* flex-direction: column; */
 					align-items: center;
 					justify-content: center;
 					margin: 0;
 					width: 100%;
 					height: 400px;
-					/* background: linear-gradient(-45deg, #bb3953, #118985, #fb6ad9); */
-					background-size: 600% 400%;
-					animation: gradientBackground 20s ease infinite;
-					border-radius: 10px;
-					color: white;
-					text-align: center;
+					position: absolute;
+					top: 0;
+					left: 0;
 				}
 
 				.char {
@@ -77,64 +72,105 @@
 						0 3px 0 #625b5b,
 						0 4px 0 #625b5b,
 						0 12px 5px rgba(0, 0, 0, 0.1);
+					animation: slideInOut 3s infinite;
+					transform: translateY(200%);
+					opacity: 0;
 				}
 
 				.space {
 					width: 25px;
 				}
 
-				.char {
-					animation: rotate ease-in-out 2.2s infinite alternate;
-				}
+				/* Layer 1 - Cyan (enters last) */
+				.layer-1 .char { color: #00ffff; }
+				.layer-1 .char:nth-child(1) { animation-delay: 0.045s; }
+				.layer-1 .char:nth-child(2) { animation-delay: 0.095s; }
+				.layer-1 .char:nth-child(3) { animation-delay: 0.145s; }
+				.layer-1 .char:nth-child(5) { animation-delay: 0.195s; }
+				.layer-1 .char:nth-child(6) { animation-delay: 0.245s; }
+				.layer-1 .char:nth-child(7) { animation-delay: 0.295s; }
+				.layer-1 .char:nth-child(8) { animation-delay: 0.345s; }
+				.layer-1 .char:nth-child(9) { animation-delay: 0.395s; }
 
-				.char:nth-child(1) {
-					animation-delay: 1.3s;
-				}
+				/* Layer 2 - Magenta (enters third) */
+				.layer-2 .char { color: #ff00ff; }
+				.layer-2 .char:nth-child(1) { animation-delay: 0.03s; }
+				.layer-2 .char:nth-child(2) { animation-delay: 0.08s; }
+				.layer-2 .char:nth-child(3) { animation-delay: 0.13s; }
+				.layer-2 .char:nth-child(5) { animation-delay: 0.18s; }
+				.layer-2 .char:nth-child(6) { animation-delay: 0.23s; }
+				.layer-2 .char:nth-child(7) { animation-delay: 0.28s; }
+				.layer-2 .char:nth-child(8) { animation-delay: 0.33s; }
+				.layer-2 .char:nth-child(9) { animation-delay: 0.38s; }
 
-				.char:nth-child(2) {
-					animation-delay: 1.4s;
-				}
+				/* Layer 3 - Yellow (enters second) */
+				.layer-3 .char { color: #ffff00; }
+				.layer-3 .char:nth-child(1) { animation-delay: 0.015s; }
+				.layer-3 .char:nth-child(2) { animation-delay: 0.065s; }
+				.layer-3 .char:nth-child(3) { animation-delay: 0.115s; }
+				.layer-3 .char:nth-child(5) { animation-delay: 0.165s; }
+				.layer-3 .char:nth-child(6) { animation-delay: 0.215s; }
+				.layer-3 .char:nth-child(7) { animation-delay: 0.265s; }
+				.layer-3 .char:nth-child(8) { animation-delay: 0.315s; }
+				.layer-3 .char:nth-child(9) { animation-delay: 0.365s; }
 
-				.char:nth-child(3) {
-					animation-delay: 1.5s;
-				}
+				/* Layer 4 - White (enters first) */
+				.layer-4 .char { color: #ffffff; }
+				.layer-4 .char:nth-child(1) { animation-delay: 0s; }
+				.layer-4 .char:nth-child(2) { animation-delay: 0.05s; }
+				.layer-4 .char:nth-child(3) { animation-delay: 0.1s; }
+				.layer-4 .char:nth-child(5) { animation-delay: 0.15s; }
+				.layer-4 .char:nth-child(6) { animation-delay: 0.2s; }
+				.layer-4 .char:nth-child(7) { animation-delay: 0.25s; }
+				.layer-4 .char:nth-child(8) { animation-delay: 0.3s; }
+				.layer-4 .char:nth-child(9) { animation-delay: 0.35s; }
 
-				.char:nth-child(4) {
-					animation-delay: 1.6s;
-				}
-
-				.char:nth-child(5) {
-					animation-delay: 1.7s;
-				}
-
-				.char:nth-child(6) {
-					animation-delay: 1.8s;
-				}
-
-				.char:nth-child(7) {
-					animation-delay: 1.9s;
-				}
-
-				.char:nth-child(8) {
-					animation-delay: 2.0s;
-				}
-
-				.char:nth-child(9) {
-					animation-delay: 2.1s;
-				}
 			</style>
 			<div class="container">
-				<span class="char">T</span>
-				<span class="char">A</span>
-				<span class="char">L</span>
-				<!-- &nbsp; -->
-				<span class="space"></span>
-				<span class="char">H</span>
-				<span class="char">A</span>
-				<span class="char">Y</span>
-				<span class="char">U</span>
-				<span class="char">T</span>
-
+				<div class="inner-container layer-1">
+					<span class="char">T</span>
+					<span class="char">A</span>
+					<span class="char">L</span>
+					<span class="space"></span>
+					<span class="char">H</span>
+					<span class="char">A</span>
+					<span class="char">Y</span>
+					<span class="char">U</span>
+					<span class="char">T</span>
+				</div>
+				<div class="inner-container layer-2">
+					<span class="char">T</span>
+					<span class="char">A</span>
+					<span class="char">L</span>
+					<span class="space"></span>
+					<span class="char">H</span>
+					<span class="char">A</span>
+					<span class="char">Y</span>
+					<span class="char">U</span>
+					<span class="char">T</span>
+				</div>
+				<div class="inner-container layer-3">
+					<span class="char">T</span>
+					<span class="char">A</span>
+					<span class="char">L</span>
+					<span class="space"></span>
+					<span class="char">H</span>
+					<span class="char">A</span>
+					<span class="char">Y</span>
+					<span class="char">U</span>
+					<span class="char">T</span>
+				</div>
+				<div class="inner-container layer-4">
+					<span class="char">T</span>
+					<span class="char">A</span>
+					<span class="char">L</span>
+					<span class="space"></span>
+					<span class="char">H</span>
+					<span class="char">A</span>
+					<span class="char">Y</span>
+					<span class="char">U</span>
+					<span class="char">T</span>
+				</div>
 			</div>
 		</div>
 	</foreignObject>
