@@ -13,7 +13,8 @@
 
 ## [chartscii](https://github.com/tool3/chartscii)
 
-![Screen Recording 2025-10-13 at 10 42 40 (3)](https://github.com/tool3/tool3/blame/main/ing/sine.svg)
+![chartscii](https://github.com/tool3/tool3/blob/master/img/sine.svg)
+
 
 ## [shaders](https://github.com/tool3/shaders)
 
