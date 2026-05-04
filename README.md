@@ -29,3 +29,7 @@
 ## [matcaps](https://github.com/tool3/matcaps)
 
 <img width="1728" height="963" alt="Screenshot 2025-10-10 at 15 40 36" src="https://github.com/user-attachments/assets/3f7148c9-a240-47e8-88a8-5bccb1fc70ed" />
+
+## [cubed](https://github.com/tool3/cubed)
+
+<img width="1728" height="963" alt="Screenshot 2025-10-10 at 15 40 36" src="https://github.com/tool3/tool3/blob/master/img/cub3d.png" />
