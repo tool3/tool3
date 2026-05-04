@@ -2,8 +2,8 @@
 	<br>
 	<a href="https://github.com/tool3/tool3/blame/main/tal.svg">
 		<picture>
-		  <source media="(min-width: 720px)" srcset="tal-mobile.svg">
-		  <img src="tal.svg" width="800" height="400" alt="Click to see the source">
+		  <source media="(min-width: 720px)" srcset="tal.svg">
+		  <img src="tal-mobile.svg" width="800" height="400" alt="Click to see the source">
 		</picture>
 	</a>
 	<br>
