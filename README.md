@@ -9,8 +9,6 @@
 	<br>
 </div>
 
-# Project Highlights
-
 ## [chartscii](https://github.com/tool3/chartscii)
 
 ![chartscii](https://github.com/tool3/tool3/blob/master/img/sine.svg)
