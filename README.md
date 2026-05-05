@@ -11,7 +11,12 @@
 
 ## [chartscii](https://github.com/tool3/chartscii)
 
-![chartscii](https://github.com/tool3/tool3/blob/master/img/sine.svg)
+![chartscii](https://github.com/tool3/tool3/blob/master/img/sine.svg?raw=true)
+
+
+## [shellfied](https://shellfied.vercel.app)
+
+![shellfied](https://shellfie.vercel.app/s/6THJgiN.svg)
 
 
 ## [shaders](https://github.com/tool3/shaders)
@@ -32,4 +37,4 @@
 
 ## [cubed](https://github.com/tool3/cubed)
 
-<img width="1728" height="963" alt="Screenshot 2025-10-10 at 15 40 36" src="https://github.com/tool3/tool3/blob/master/img/cub3d.png" />
+<img width="1728" height="963" alt="Screenshot 2025-10-10 at 15 40 36" src="https://github.com/tool3/tool3/blob/master/img/cub3d.png?raw=true" />
