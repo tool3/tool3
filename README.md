@@ -16,7 +16,7 @@
 
 ## [shellfied](https://shellfied.vercel.app)
 
-![shellfied](https://shellfie.vercel.app/s/6THJgiN.svg)
+![shellfied](https://shellfied.vercel.app/s/3cRFpRe.svg)
 
 ## [dvd](https://github.com/tool3/dvd-cli)
 
