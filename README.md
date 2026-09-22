@@ -20,7 +20,7 @@
 
 ## [dvd](https://github.com/tool3/dvd-cli)
 
-![dvd](https://github.com/tool3/tool3/blob/master/img/neo.svg?raw=true)
+![dvd](https://github.com/tool3/tool3/blob/master/img/mtrx.svg?raw=true)
 
 
 ## [shaders](https://github.com/tool3/shaders)
